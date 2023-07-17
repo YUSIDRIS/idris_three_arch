@@ -103,12 +103,12 @@ resource "aws_route_table_association" "associte_private_route" {
   route_table_id = aws_route_table.private_route_table[count.index].id
 }
 
-resource "aws_subnet" "DATA" {
+resource "aws_subnet" "DATAbase" {
     count = 2
   vpc_id = aws_vpc.threetier.id
   cidr_block = var.data_subnet_cidr[count.index]
   availability_zone = data.aws_availability_zones.AZ.names[count.index]
 
   tags = {
-    Name =  "${var.idris_prefix}-DATA${count.index+1}" }
+    Name =  "${var.idris_prefix}-DATAbase${count.index+1}" }
 }
