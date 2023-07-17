@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "idristerraformstate"
-    key    = "network/state"
+    key    = "webserver/state"
     region = "us-east-2"
     dynamodb_table = "idris_state_lock"
   }
